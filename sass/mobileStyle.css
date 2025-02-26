@@ -1,0 +1,345 @@
+@import url("https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Alexandria", sans-serif;
+}
+
+body {
+  background-color: #181818;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.no-scroll {
+  overflow: hidden;
+  position: fixed;
+}
+
+main {
+  overflow-x: hidden;
+}
+main .title {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5%;
+}
+main .title h2 {
+  font-weight: 600;
+  color: white;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  padding: 0 0 0 4%;
+}
+main .title .line-container {
+  position: relative;
+  width: 100%;
+}
+main .title .line-container .line {
+  position: absolute;
+  top: 25%;
+  right: 0;
+  width: 500%;
+  height: 50%;
+  background-color: #f4c22c;
+  box-shadow: inset 0px 0px 7px rgba(0, 0, 0, 0.6);
+}
+main #home {
+  background-color: black;
+  height: 100vh;
+}
+main #home .contact-btn {
+  background-color: #f4c22c;
+  color: black !important;
+  padding: 0.5rem 1.5rem !important;
+  text-decoration: none;
+  display: inline-block !important;
+  text-transform: uppercase;
+  font-weight: 500;
+  border: 2px solid #f4c22c;
+}
+main #home .contact-btn:active {
+  background-color: black;
+  color: #f4c22c !important;
+}
+main #home header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  position: relative;
+  height: 10vh;
+  padding: 5%;
+  border-bottom: 2px solid #f4c22c;
+}
+main #home header #tiny-logo {
+  height: 110%;
+}
+main #home header .hamburger {
+  cursor: pointer;
+  z-index: 100;
+  padding: 10px;
+}
+main #home header .hamburger .bar {
+  display: block;
+  width: 30px;
+  height: 2px;
+  margin: 6px auto;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+main #home header .hamburger.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+main #home header .hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+main #home header .hamburger.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+main #home header .nav-menu {
+  position: absolute;
+  top: 100%;
+  left: -100%;
+  width: 100%;
+  height: 91vh;
+  background: rgba(0, 0, 0, 0.8);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  transition: 0.3s;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
+}
+main #home header .nav-menu.active {
+  left: 0;
+}
+main #home header .nav-menu ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+main #home header .nav-menu a {
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  padding: 0.5rem;
+  display: block;
+}
+main #home #home-text {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+main #home #home-text #text-container {
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  min-height: 0;
+  padding: 0 5%;
+}
+main #home #home-text #text-container h1 {
+  text-transform: uppercase;
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+main #home #home-text #text-container p {
+  font-weight: 300;
+  font-size: 0.8rem;
+  margin: 20px 0px;
+}
+main #home #home-text #lady-container {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  height: auto;
+  flex-shrink: 0;
+}
+main #home #home-text #lady-container img {
+  width: 90%;
+  height: auto;
+}
+main #about {
+  padding: 10%;
+}
+main #about p {
+  font-size: 0.8rem;
+  text-align: justify;
+  color: white;
+}
+main #areas {
+  background-color: white;
+  padding: 10%;
+}
+main #areas .title h2 {
+  color: black;
+  padding: 0 5% 0 0;
+}
+main #areas .title .line-container .line {
+  left: 0;
+}
+main #areas .areas-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 720px;
+  padding: 0;
+  margin: 0;
+  gap: 5px;
+}
+main #areas .areas-list li {
+  list-style: none;
+  background-color: #f4c22c;
+  box-sizing: border-box;
+  padding: 5%;
+  transition: all 0.3s;
+}
+main #areas .areas-list li h3 {
+  margin: 10px 0;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+main #areas .areas-list li p {
+  font-size: 0.7rem;
+  text-align: justify;
+}
+main #contact {
+  color: white;
+  background-color: black;
+  padding: 10%;
+}
+main #contact .contact-container {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+main #contact .contact-container .contact-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+main #contact .contact-container .contact-links ul {
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+main #contact .contact-container .contact-links li {
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+main #contact .contact-container .contact-links li img {
+  height: 50%;
+  margin-right: 10px;
+}
+main #contact .contact-container .contact-links li span strong {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  color: #f4c22c;
+  font-weight: 600;
+}
+main #contact .contact-container .contact-links li span a {
+  font-size: 0.8rem;
+  display: block;
+  color: white;
+  text-decoration: none;
+}
+main #contact .contact-container .contact-links li span a:hover {
+  text-decoration: underline;
+}
+main #contact .contact-container #email-form {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  margin-top: 10px;
+}
+main #contact .contact-container #email-form input,
+main #contact .contact-container #email-form textarea {
+  box-shadow: rgba(0, 0, 0, 0.4) 1px 3px 6px;
+  height: 16%;
+  padding: 3%;
+  margin-bottom: 2%;
+  width: 100%;
+  outline: none;
+  border: none;
+  font-family: "Encode Sans Expanded", sans-serif;
+}
+main #contact .contact-container #email-form input::-moz-placeholder, main #contact .contact-container #email-form textarea::-moz-placeholder {
+  font-weight: 500;
+  font-size: 0.8rem;
+  color: rgba(0, 0, 0, 0.4);
+  font-family: "Alexandria";
+}
+main #contact .contact-container #email-form input::placeholder,
+main #contact .contact-container #email-form textarea::placeholder {
+  font-weight: 500;
+  font-size: 0.8rem;
+  color: rgba(0, 0, 0, 0.4);
+  font-family: "Alexandria";
+}
+main #contact .contact-container #email-form textarea {
+  height: 100%;
+  resize: none;
+}
+main #contact .contact-container #email-form button {
+  background-color: #f4c22c;
+  padding: 10px 15%;
+  text-decoration: none;
+  color: black;
+  border: 2px solid #f4c22c;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 1px;
+  cursor: pointer;
+  width: 100%;
+}
+main #contact .contact-container #email-form button:active {
+  background-color: black;
+  color: #f4c22c;
+}
+main footer {
+  background-color: #181818;
+  padding: 15% 5%;
+  height: 15vh;
+  color: rgba(255, 255, 255, 0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.6rem;
+  text-align: center;
+  font-weight: 300;
+}
+main footer span {
+  margin-bottom: 10px;
+}
+main footer span a {
+  color: rgba(255, 255, 255, 0.4);
+}
+main footer span a:hover {
+  color: #f4c22c;
+}
+main footer img {
+  margin-top: 5px;
+  width: 50%;
+}/*# sourceMappingURL=mobileStyle.css.map */

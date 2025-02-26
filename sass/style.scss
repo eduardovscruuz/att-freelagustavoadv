@@ -1,0 +1,411 @@
+$my-yellow-transp: #f4c22cbb;
+$my-yellow: #f4c22c;
+$my-grey: #181818;
+@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&display=swap');
+
+/* Estado inicial: invisível e com transformação */
+.animate-show,
+.animate-right,
+.animate-left,
+.animate-bottom,
+.animate-top {
+  opacity: 0;
+  filter: blur(0.1rem);
+  transition: all 1s ease-out;
+}
+
+/* Quando visível, aplica a animação */
+.animate-show.visible {
+  opacity: 1;
+  transform: scale(1);
+  filter: blur(0);
+}
+
+.animate-right.visible,
+.animate-left.visible,
+.animate-bottom.visible,
+.animate-top.visible {
+  opacity: 1;
+  transform: translate(0);
+  filter: blur(0);
+}
+
+/* Estado inicial específico */
+.animate-show {
+  transform: scale(0.9);
+}
+.animate-right {
+  transform: translateX(10%);
+}
+.animate-left {
+  transform: translateX(-10%);
+}
+.animate-bottom {
+  transform: translateY(10%);
+}
+.animate-top {
+  transform: translateY(-10%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Alexandria', sans-serif;
+}
+body {
+  background-color: $my-grey;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+::-webkit-scrollbar {
+  width: 0.9em;
+}
+::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0);
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(158, 158, 158, 0.5);
+
+  &:hover {
+    background-color: rgba(158, 158, 158, 0.6);
+  }
+  &:active {
+    background-color: rgba(158, 158, 158, 0.8);
+  }
+}
+main {
+  // ---------------- ESTILOS GLOBAIS
+  box-shadow: 0 0 25px black;
+  max-width: 1720px;
+  overflow: hidden;
+  .title {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5%;
+    h2 {
+      font-weight: 600;
+      color: white;
+      text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      min-width: fit-content;
+      padding: 0 0 0 2%;
+    }
+
+    .line-container {
+      position: relative;
+      width: 100%;
+      .line {
+        position: absolute;
+        top: 25%;
+        right: 0;
+        width: 150%;
+        height: 50%;
+        background-color: $my-yellow;
+        box-shadow: inset 0px 0px 7px rgba(0, 0, 0, 0.6);
+      }
+    }
+  }
+  // ---------------- ESTILOS DA PÁGINA INICIAL
+  #home {
+    padding: 0 5%;
+    color: white;
+    background-color: black;
+    height: 100vh;
+
+    .contact-btn {
+      background-color: $my-yellow;
+      position: relative;
+      padding: 10px 50px;
+      text-decoration: none;
+      color: black;
+      border: 2px solid $my-yellow;
+      transition: all 0.3s;
+      text-transform: uppercase;
+      font-weight: 500;
+      letter-spacing: 1px;
+      z-index: 3;
+      &:hover {
+        background-color: black;
+        color: $my-yellow;
+      }
+    }
+    header {
+      height: 10vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .hamburger {
+        display: none;
+      }
+      #tiny-logo {
+        height: 80%;
+        margin-right: 10px;
+      }
+
+      nav {
+        width: 100%;
+
+        ul {
+          display: flex;
+          align-items: center;
+          height: 100%;
+          padding: 0;
+          margin: 0;
+          list-style: none;
+          position: relative;
+
+          li:last-child {
+            margin-left: auto;
+          }
+
+          a {
+            list-style: none;
+            margin: 0;
+            padding: 10px;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 300;
+            color: white;
+            letter-spacing: 1px;
+            font-size: 1rem;
+
+            &:hover {
+              color: $my-yellow;
+            }
+          }
+        }
+      }
+    }
+
+    #home-text {
+      position: relative;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      height: 90vh;
+
+      #text-container {
+        display: flex;
+        flex-direction: column;
+        width: 45%;
+        h1 {
+          font-size: clamp(2.2rem, 3.1vw, 10rem);
+          text-transform: uppercase;
+        }
+        p {
+          font-size: 1rem;
+          margin: 20px 10px 20px 0px;
+        }
+
+        .contact-btn {
+          margin: unset;
+          width: 40%;
+          min-width: fit-content;
+          text-align: center;
+        }
+      }
+
+      #lady-container {
+        display: flex;
+        align-self: flex-end;
+        left: 55%;
+        height: 110%;
+        width: 50%;
+        img {
+          width: auto;
+          margin: auto;
+          max-width: 100%;
+          height: 100%;
+          aspect-ratio: 1/1;
+          object-fit: contain;
+          object-position: bottom;
+        }
+      }
+    }
+  }
+  // ---------------- ESTILOS DO SOBRE MIM
+  #about {
+    padding: 5%;
+    background-color: $my-grey;
+    color: white;
+
+    p {
+      text-align: justify;
+      font-size: 1rem;
+      font-weight: 300;
+    }
+  }
+  // ---------------- ESTILOS PÁGINA DE ÁREAS DE ATUAÇÃO
+  #areas {
+    padding: 5%;
+    background-color: white;
+
+    .title {
+      h2 {
+        color: black;
+        padding: 0 2% 0 0;
+      }
+      .line-container .line {
+        left: 0;
+      }
+    }
+
+    .areas-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 1720px;
+      padding: 0;
+      margin: 0;
+      gap: 10px;
+      li {
+        list-style: none;
+        background-color: $my-yellow-transp;
+        flex: 1 1 calc(50% - 10px);
+        box-sizing: border-box;
+        padding: 5%;
+        transition: all 0.3s;
+        &:hover {
+          background-color: $my-yellow;
+          transform: scale(101%);
+        }
+
+        h3 {
+          margin: 10px 0;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+
+  // ---------------- ESTILOS PÁGINA DE CONTATO
+  #contact {
+    color: white;
+    background-color: black;
+    padding: 5%;
+
+    .contact-container {
+      height: 60vh;
+      display: flex;
+
+      .contact-links {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 40%;
+        ul {
+          height: 90%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+        }
+        li {
+          list-style: none;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+
+          img {
+            height: 100%;
+            margin-right: 10px;
+          }
+          span {
+            strong {
+              font-size: 1.2rem;
+              text-transform: uppercase;
+              color: $my-yellow;
+              font-weight: 600;
+            }
+            a {
+              display: block;
+              color: white;
+              text-decoration: none;
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+      }
+
+      #email-form {
+        display: flex;
+        height: auto;
+        width: 60%;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+
+        input,
+        textarea {
+          box-shadow: rgba(0, 0, 0, 0.4) 1px 3px 6px;
+          height: 2%;
+          padding: 3%;
+          margin-bottom: 2%;
+          width: 100%;
+          outline: none;
+          border: none;
+          font-family: 'Encode Sans Expanded', sans-serif;
+          &::placeholder {
+            font-weight: 500;
+            color: rgba(0, 0, 0, 0.4);
+            font-family: 'Alexandria';
+          }
+        }
+
+        textarea {
+          height: 100%;
+          resize: none;
+        }
+
+        button {
+          margin-left: auto;
+          background-color: $my-yellow;
+          padding: 10px 15%;
+          text-decoration: none;
+          color: black;
+          border: 2px solid $my-yellow;
+          transition: all 0.3s;
+          text-transform: uppercase;
+          font-weight: 400;
+          letter-spacing: 1px;
+          cursor: pointer;
+          &:hover {
+            background-color: black;
+            color: $my-yellow;
+          }
+        }
+      }
+    }
+  }
+  // ---------------- ESTILOS FOOTER
+  footer {
+    background-color: $my-grey;
+    padding: 0 5%;
+    height: 15vh;
+    color: rgba(255, 255, 255, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8rem;
+    font-weight: 300;
+    span {
+      margin-bottom: 10px;
+      a {
+        color: rgba(255, 255, 255, 0.4);
+        &:hover {
+          color: $my-yellow;
+        }
+      }
+    }
+    img {
+      width: 15%;
+    }
+  }
+}
