@@ -72,7 +72,7 @@ function switchStylesheet() {
 
   if (newBreakpoint !== currentBreakpoint) {
     currentBreakpoint = newBreakpoint;
-    styleLink.href = `/sass/${currentBreakpoint === 'mobile' ? 'mobileStyle' : 'style'}.css`;
+    styleLink.href = `./sass/${currentBreakpoint === 'mobile' ? 'mobileStyle' : 'style'}.css`;
   }
 }
 
