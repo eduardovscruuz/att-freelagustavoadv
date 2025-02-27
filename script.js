@@ -81,4 +81,6 @@ window.addEventListener('resize', () => {
   resizeTimeout = setTimeout(switchStylesheet, 100);
 });
 
+// Garantir que o stylesheet correto seja aplicado ao carregar a página
 window.addEventListener('load', switchStylesheet);
+switchStylesheet(); // Chamada direta para garantir que o stylesheet correto seja aplicado imediatamente
